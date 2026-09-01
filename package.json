@@ -15,18 +15,6 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
-    },
-    "./layout": {
-      "types": "./dist/splitPane.d.ts",
-      "import": "./dist/splitPane.js"
-    },
-    "./outline": {
-      "types": "./dist/outline.d.ts",
-      "import": "./dist/outline.js"
-    },
-    "./dom": {
-      "types": "./dist/dom.d.ts",
-      "import": "./dist/dom.js"
     }
   },
   "files": [
