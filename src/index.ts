@@ -1,18 +1,20 @@
 export { SplitPane } from './splitPane.js';
 export type {
   Axis,
+  Card,
+  CardInit,
   Divider,
   Fill,
   FillOrder,
-  SplitPaneOptions,
-  SplitPaneState,
-  Pane,
-  PaneInit,
   Rect,
   Rule,
   Side,
   SnapMode,
-  Station,
+  SplitPaneOptions,
+  SplitPaneState,
+  Zone,
+  ZoneHit,
+  ZoneOptions,
 } from './splitPane.js';
 
 export { contains, outline, roundedPath, unionLoops } from './outline.js';
