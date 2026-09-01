@@ -11,6 +11,7 @@ export type {
   Rect,
   Rule,
   SnapMode,
+  Station,
 } from './splitPane.js';
 
 export { contains, outline, roundedPath, unionLoops } from './outline.js';
