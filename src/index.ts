@@ -1,4 +1,4 @@
-export { SplitPane } from './splitPane.js';
+export { SplitPane, checkState } from './splitPane.js';
 export type {
   Axis,
   Card,
