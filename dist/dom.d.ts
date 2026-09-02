@@ -41,7 +41,12 @@ export declare class SplitPaneView {
     private cardEls;
     private dividerEls;
     private ruleEls;
-    private drag;
+    /**
+     * One drag per pointer. A single field meant a second finger overwrote the
+     * first, so the divider still under the first finger drove the second one's
+     * line and kept `data-dragging` forever.
+     */
+    private drags;
     private observer;
     private disposed;
     constructor(host: HTMLElement, grid: SplitPane, options: ViewOptions);
