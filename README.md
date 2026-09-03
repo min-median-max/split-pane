@@ -371,6 +371,9 @@ line that gave up. Only the host knows the distance: the view is handed an
 element, and an element's own padding does not move what is placed absolutely
 inside it. Only the ends that reach the plane bleed; a rule that stops against
 a card is left where it stops, because there the card is the wall.
+
+It is writable on the view — `view.bleed = px` — because a host that lets a
+person change its gap changes this with it.
 `reason` is one of `drag`, `center`, `merge`, `resize`, `render`.
 
 `outline(rects, options)`, `unionLoops(rects)`, `roundedPath(loop, radius, innerRadius)`,
