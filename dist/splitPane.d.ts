@@ -136,6 +136,13 @@ export declare class SplitPane {
     /** Grid line coordinates, normalised 0..1. A copy — the arrangement owns them. */
     lines(axis: Axis): number[];
     toJSON(): SplitPaneState;
+    /**
+     * Replace the arrangement while keeping this grid's plane and options.
+     *
+     * The payload is opaque to the library. This is the synchronization point
+     * for a host that owns the canonical state and keeps one DOM view alive.
+     */
+    replace(state: SplitPaneState): void;
     private get plane();
     private arr;
     /** An axis the caller made up. Every public method that takes one refuses. */
