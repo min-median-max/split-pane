@@ -72,6 +72,8 @@ export declare class SplitPaneView {
      * set on a divider nobody was holding.
      */
     private drags;
+    private mouseDrag;
+    private mouseDisposers;
     private observer;
     private disposed;
     constructor(host: HTMLElement, grid: SplitPane, options: ViewOptions);
