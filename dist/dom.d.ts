@@ -16,7 +16,7 @@
  * absolutely inside it.
  */
 import { SplitPane } from './splitPane.js';
-import type { Card, Rect } from './splitPane.js';
+import type { Card, Divider, Rect } from './splitPane.js';
 export type ChangeReason = 'drag' | 'center' | 'merge' | 'resize' | 'render';
 export interface ViewOptions {
     /**
@@ -27,6 +27,8 @@ export interface ViewOptions {
     createCard(card: Card): HTMLElement;
     /** Called on every render for every card, after the rect is applied. */
     updateCard?(el: HTMLElement, card: Card, rect: Rect): void;
+    /** Called on every render for every divider, after its rect is applied. */
+    updateDivider?(el: HTMLElement, divider: Divider): void;
     /** Called when a card element is about to be removed. */
     destroyCard?(el: HTMLElement, card: Card): void;
     /** Class name stem for the elements the view creates. Default `sp`. */
