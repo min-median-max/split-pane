@@ -1,5 +1,7 @@
 # split-pane
 
+Korean translation: [`README.ko.md`](README.ko.md).
+
 Split-pane layout over shared grid lines. Headless core, optional DOM binding, no runtime dependencies.
 
 ## The rules
