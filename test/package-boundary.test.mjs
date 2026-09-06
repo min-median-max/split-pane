@@ -68,13 +68,19 @@ test("every exported name appears in the README", async () => {
     assert.match(readme, new RegExp(`\\b${name}\\b`), `${name} is exported and undocumented`);
   }
 
-  // And every public method of the two classes.
+  // And every public method of both classes.
   const methods = (cls) =>
     Object.getOwnPropertyNames(cls.prototype).filter((n) => n !== "constructor" && !n.startsWith("_"));
-  const declared = readFileSync(new URL("../dist/splitPane.d.ts", import.meta.url), "utf8");
-  for (const name of methods(lib.SplitPane)) {
-    if (!new RegExp(`^\\s{4}(get |set )?${name}[(<:]`, "m").test(declared)) continue;   // private
-    assert.match(readme, new RegExp(`\\b${name}\\b`), `SplitPane.${name} is public and undocumented`);
+  const classes = [
+    ["SplitPane", lib.SplitPane, "splitPane.d.ts"],
+    ["SplitPaneView", lib.SplitPaneView, "dom.d.ts"],
+  ];
+  for (const [what, cls, file] of classes) {
+    const declared = readFileSync(new URL(`../dist/${file}`, import.meta.url), "utf8");
+    for (const name of methods(cls)) {
+      if (!new RegExp(`^\\s{4}(get |set )?${name}[(<:]`, "m").test(declared)) continue;   // private
+      assert.match(readme, new RegExp(`\\b${name}\\b`), `${what}.${name} is public and undocumented`);
+    }
   }
 });
 
