@@ -24,7 +24,7 @@ const REPO = new URL("../", import.meta.url).pathname;
 const HERE = `${mkdtempSync(join(tmpdir(), "split-pane-mutants-"))}/`;
 for (const part of [
   "dist", "test", "scripts", "src",
-  "package.json", "README.md", "Makefile", "tsconfig.json", ".node-version",
+  "package.json", "README.md", "docs", "Makefile", "tsconfig.json", ".node-version",
 ]) {
   cpSync(`${REPO}${part}`, `${HERE}${part}`, { recursive: true });
 }
